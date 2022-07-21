@@ -1,9 +1,17 @@
 #Imports
 import turtle, random
 
+#Function to only get an interger input from the user
+def intinput(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Please enter a number.")
+
 #variables
-scr_x = 400
-scr_y = 300
+scr_x = intinput("Enter screen width: ")
+scr_y = intinput("Enter screen height: ")
 
 #setup screen
 screen = turtle.Screen()
@@ -16,13 +24,6 @@ turtle.showturtle()
 turtle.shape("turtle")
 
 #functions
-def intinput(prompt):
-    while True:
-        try:
-            return int(input(prompt))
-        except ValueError:
-            print("Please enter a number.")
-
 def intinputrange(prompt, min, max):
     while True:
         try:
