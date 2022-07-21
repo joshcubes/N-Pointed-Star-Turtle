@@ -75,7 +75,7 @@ def ranstars():
         x = random.randint(0, scr_x)
         y = random.randint(0, scr_y)
         ang = random.randint(0, 360)
-        n = random.randint(5, 50)
+        n = random.randint(5, 12)
         size = random.randint(1, 100)
         draw_star(x, y, ang, n, size)
 
