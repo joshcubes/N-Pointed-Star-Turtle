@@ -2,13 +2,12 @@
 import turtle, random
 
 #variables
-scr_x = 800
-scr_y = 600
-unknown_calc = 0
+scr_x = 400
+scr_y = 300
 
 #setup screen
 screen = turtle.Screen()
-screen.setup(scr_x, scr_y)
+screen.setup(scr_x*2, scr_y*2)
 screen.bgcolor("white")
 screen.title("Stars")
 
@@ -71,11 +70,25 @@ def draw_star(x, y, ang, n, size):
             turtle.forward(size)
             turtle.right(angle)
 
+def newtest(x,y):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(50)
+
+
 def ranstars():
     amnt = intinput("How many stars would you like to draw? ")
     for i in range(0, amnt):
-        x = random.randint(scr_x*-1, scr_x)
-        y = random.randint(scr_y*-1, scr_y)
+        x = random.randint(0, scr_x)
+        y = random.randint(0, scr_y)
         ang = random.randint(0, 360)
         n = random.randint(5, 50)
         size = random.randint(1, 100)
@@ -91,7 +104,8 @@ def manstars():
         size = intinput("Enter size: ")
         draw_star(x, y, ang, n, size)
 
-#User Inputs Data for star
+#User Inputs Data for stars
+
 speed = intinput("Enter speed: ")
 turtle.speed(speed)
 
