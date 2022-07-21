@@ -31,6 +31,7 @@ def intinputrange(prompt, min, max):
             print("Please enter a number between " + str(min) + " and " + str(max) + ".")
 
 def draw_star(x, y, ang, n, size):
+
     turtle.penup()
     turtle.goto(x, y)
     turtle.setheading(ang)
@@ -51,7 +52,6 @@ def draw_star(x, y, ang, n, size):
                 turtle.goto(coords[b][0], coords[b][1])
             else:
                 continue
-
         turtle.goto(coords[0][0], coords[0][1])
         turtle.penup()
 
@@ -61,28 +61,12 @@ def draw_star(x, y, ang, n, size):
                 turtle.pendown()
             else:
                 continue
-
         turtle.goto(coords[1][0], coords[1][1])
-
     else:
         angle = 180 - (180 / n)
         for a in range(n):
             turtle.forward(size)
             turtle.right(angle)
-
-def newtest(x,y):
-    turtle.penup()
-    turtle.goto(x, y)
-    turtle.pendown()
-
-    turtle.forward(50)
-    turtle.right(90)
-    turtle.forward(50)
-    turtle.right(90)
-    turtle.forward(50)
-    turtle.right(90)
-    turtle.forward(50)
-
 
 def ranstars():
     amnt = intinput("How many stars would you like to draw? ")
