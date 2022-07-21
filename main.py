@@ -72,8 +72,8 @@ def draw_star(x, y, ang, n, size):
 def ranstars():
     amnt = intinput("How many stars would you like to draw? ")
     for i in range(0, amnt):
-        x = random.randint(0, scr_x)
-        y = random.randint(0, scr_y)
+        x = random.randint(scr_x*-1, scr_x)
+        y = random.randint(scr_y*-1, scr_y)
         ang = random.randint(0, 360)
         n = random.randint(5, 12)
         size = random.randint(1, 100)
@@ -94,7 +94,7 @@ def manstars():
 speed = intinput("Enter speed: ")
 turtle.speed(speed)
 
-choice = intinputrange("Would you like to draw stars manually or randomly? \n1. Random \n2. Manual \n", 1, 2)
+choice = intinputrange("Would you like to draw stars manually or randomly? \n1. Random \n2. Manual \n\nPlease Enter Your Choice: ", 1, 2)
 if(choice == 1):
     ranstars()
 elif(choice == 2):
