@@ -4,3 +4,17 @@
 [![GitHub forks](https://img.shields.io/github/forks/joshcubes/N-Pointed-Star-Turtle)](https://github.com/joshcubes/N-Pointed-Star-Turtle/network)
 [![GitHub stars](https://img.shields.io/github/stars/joshcubes/N-Pointed-Star-Turtle)](https://github.com/joshcubes/N-Pointed-Star-Turtle/stargazers)
 [![GitHub license](https://img.shields.io/github/license/joshcubes/N-Pointed-Star-Turtle)](https://github.com/joshcubes/N-Pointed-Star-Turtle/blob/main/LICENSE)
+ 
+`N Pointed Star` Is a program to draw random or manually placed stars using the turtle library.
+  
+Usage:
+---
+Run `python main.py`
+
+ **How to Contribute**
+---
+
+1. Clone repo
+2. Make changes and test
+3. Submit Pull Request
+4. Its that somple
