@@ -1,8 +1,5 @@
 #Imports
-import turtle
-import random
-
-from matplotlib.pyplot import draw
+import turtle, random
 
 #variables
 scr_x = 800
@@ -18,6 +15,21 @@ screen.title("Stars")
 #setup turtle
 turtle.showturtle()
 turtle.shape("turtle")
+
+#functions
+def intinput(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Please enter a number.")
+
+def intinputrange(prompt, min, max):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Please enter a number between " + str(min) + " and " + str(max) + ".")
 
 def draw_star(x, y, ang, n, size):
     turtle.penup()
@@ -59,14 +71,35 @@ def draw_star(x, y, ang, n, size):
             turtle.forward(size)
             turtle.right(angle)
 
+def ranstars():
+    amnt = intinput("How many stars would you like to draw? ")
+    for i in range(0, amnt):
+        x = random.randint(scr_x*-1, scr_x)
+        y = random.randint(scr_y*-1, scr_y)
+        ang = random.randint(0, 360)
+        n = random.randint(5, 50)
+        size = random.randint(1, 100)
+        draw_star(x, y, ang, n, size)
+
+def manstars():
+    amnt = int(input("How many stars would you like to draw? "))
+    for i in range(0, amnt):
+        x = intinput("Enter x coordinate: ")
+        y = intinput("Enter y coordinate: ")
+        ang = intinput("Enter angle: ")
+        n = intinput("Enter number of points: ")
+        size = intinput("Enter size: ")
+        draw_star(x, y, ang, n, size)
+
 #User Inputs Data for star
-amnt = int(input("How many stars would you like to draw? "))
-for i in range(0, amnt):
-    x = int(input("Enter x coordinate: "))
-    y = int(input("Enter y coordinate: "))
-    ang = int(input("Enter angle: "))
-    n = int(input("Enter number of points: "))
-    size = int(input("Enter size: "))
-    draw_star(x, y, ang, n, size)
+speed = intinput("Enter speed: ")
+turtle.speed(speed)
+
+choice = intinputrange("Would you like to draw stars manually or randomly? \n1. Random \n2. Manual \n", 1, 2)
+if(choice == 1):
+    ranstars()
+elif(choice == 2):
+    manstars()
+
 
 screen.exitonclick()
