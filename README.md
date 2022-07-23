@@ -9,7 +9,8 @@
   
 Usage:
 ---
-Run `python main.py`
+1. Clone The Reop
+2. Run `python3 main.py`
 
  **How to Contribute**
 ---
