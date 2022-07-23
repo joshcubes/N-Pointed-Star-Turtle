@@ -1,17 +1,9 @@
 #Imports
-import turtle, random
-
-#Function to only get an interger input from the user
-def intinput(prompt):
-    while True:
-        try:
-            return int(input(prompt))
-        except ValueError:
-            print("Please enter a number.")
+import turtle, random, joshfuncs
 
 #variables
-scr_x = intinput("Enter screen width: ")
-scr_y = intinput("Enter screen height: ")
+scr_x = joshfuncs.intinput("Enter screen width: ")
+scr_y = joshfuncs.intinput("Enter screen height: ")
 
 #setup screen
 screen = turtle.Screen()
@@ -24,12 +16,6 @@ turtle.showturtle()
 turtle.shape("turtle")
 
 #functions
-def intinputrange(prompt, min, max):
-    while True:
-        try:
-            return int(input(prompt))
-        except ValueError:
-            print("Please enter a number between " + str(min) + " and " + str(max) + ".")
 
 def draw_star(x, y, ang, n, size):
 
@@ -70,7 +56,8 @@ def draw_star(x, y, ang, n, size):
             turtle.right(angle)
 
 def ranstars():
-    amnt = intinput("How many stars would you like to draw? ")
+    amnt = joshfy
+    joshfuncs.intinput("How many stars would you like to draw? ")
     for i in range(0, amnt):
         x = random.randint(scr_x*-1, scr_x)
         y = random.randint(scr_y*-1, scr_y)
@@ -80,25 +67,23 @@ def ranstars():
         draw_star(x, y, ang, n, size)
 
 def manstars():
-    amnt = int(input("How many stars would you like to draw? "))
+    amnt = joshfuncs("How many stars would you like to draw? ")
     for i in range(0, amnt):
-        x = intinput("Enter x coordinate: ")
-        y = intinput("Enter y coordinate: ")
-        ang = intinput("Enter angle: ")
-        n = intinput("Enter number of points: ")
-        size = intinput("Enter size: ")
+        x = joshfuncs.intinput("Enter x coordinate: ")
+        y = joshfuncs.intinput("Enter y coordinate: ")
+        ang = joshfuncs.intinput("Enter angle: ")
+        n = joshfuncs.intinput("Enter number of points: ")
+        size = joshfuncs.intinput("Enter size: ")
         draw_star(x, y, ang, n, size)
 
 #User Inputs Data for stars
-
-speed = intinput("Enter speed: ")
+speed = joshfuncs.intinput("Enter speed: ")
 turtle.speed(speed)
 
-choice = intinputrange("Would you like to draw stars manually or randomly? \n1. Random \n2. Manual \n\nPlease Enter Your Choice: ", 1, 2)
+choice = joshfuncs.intinputrange("Would you like to draw stars manually or randomly? \n1. Random \n2. Manual \n\nPlease Enter Your Choice: ", 1, 2)
 if(choice == 1):
     ranstars()
 elif(choice == 2):
     manstars()
-
 
 screen.exitonclick()
